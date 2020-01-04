@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "uploadFile.staticAccessPath",
+      "type": "java.lang.String",
+      "description": "Description for uploadFile.staticAccessPath."
+    }
+  ] }
