@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.littleworld">
+    <!-- 权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 写权限 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" /> -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- 声明后台定位权限 -->
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/app_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        tools:ignore="GoogleAppIndexingWarning">
+<!--        添加activity请添加到LoginActivity的后面!-->
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/LoginTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".LogoActivity"
+            android:theme="@style/SettingTheme" />
+
+        <activity android:name=".NoticeActivity"></activity>
+
+        <!-- Made By BaiYunpeng -->
+        <activity
+            android:name=".SettingsAccountsActivity"
+            android:theme="@style/SettingTheme" />
+        <activity
+            android:name=".SettingsContactusActivity"
+            android:theme="@style/SettingTheme" />
+        <activity
+            android:name=".SettingsPrivacyActivity"
+            android:theme="@style/SettingTheme" />
+        <activity
+            android:name=".SettingsPasswordActivity"
+            android:theme="@style/SettingTheme" /> <!-- Made By BaiYunpeng -->
+        <activity
+            android:name=".SettingEditInfo"
+            android:theme="@style/SettingTheme" />
+
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="c81a9de35e36f1e46e5bd59dbb2ff67c" />
+
+        <activity android:name=".MaskActivity" /> <!-- 跟拍照相关的内容提供器 -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.littleworld.BottomMenu.NavigationActivity.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name=".RegActivity"
+            android:theme="@style/LoginTheme" />
+        <activity
+            android:name=".ProfileActivity"
+            android:theme="@style/ProfileTheme" />
+        <activity
+            android:name=".map.POI"
+            android:theme="@style/ProfileTheme" />
+        <activity
+            android:name=".map.DriveRouteDetailActivity"
+            android:theme="@style/ProfileTheme" />
+        <activity
+            android:name=".map.Others"
+            android:theme="@style/SettingTheme" />
+        <activity
+            android:name=".map.Places"
+            android:theme="@style/SettingTheme" />
+        <activity
+            android:name=".map.Hotel"
+            android:theme="@style/SettingTheme" />
+        <activity
+            android:name=".BottomMenu.NavigationActivity"
+            android:theme="@style/SettingTheme" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/LoginTheme" /> <!-- 定位需要的服务 使用2.0的定位需要加上这个 -->
+        <service android:name="com.amap.api.location.APSService" />
+    </application>
+
+</manifest>
